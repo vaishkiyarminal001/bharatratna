@@ -28,7 +28,7 @@ export default function Home() {
     const message = `Booking Details%0aMovie: ${formData.movieName}%0aTheater: ${formData.theater}%0aScreen: ${formData.screen}%0aShow Time: ${formData.showTiming}%0aPrice: ${formData.price}%0aNumber of Tickets: ${formData.numberOfTickets}`;
 
     // WhatsApp URL including the phone number and message
-    const whatsappUrl = `https://wa.me/<YOUR_WHATSAPP_NUMBER>?text=${message}`;
+    const whatsappUrl = `https://wa.me/<+91 74794 75733>?text=${message}`;
 
     // Redirect the user to the WhatsApp URL
     window.location.href = whatsappUrl;
