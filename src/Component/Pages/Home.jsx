@@ -25,7 +25,7 @@ export default function Home() {
     console.log('Form Data:', formData);
 
     // Prepare the message based on the form data
-    const message = `Booking Details%0aMovie: ${formData.movieName}%0aTheater: ${formData.theater}%0aScreen: ${formData.screen}%0aShow Time: ${formData.showTiming}%0aPrice: ${formData.price}%0aNumber of Tickets: ${formData.numberOfTickets}`;
+    const message = `%0aNumber of Tickets: ${formData.numberOfTickets}`;
 
     // WhatsApp URL including the phone number and message
     const whatsappUrl = `https://wa.me/<+91 74794 75733>?text=${message}`;
