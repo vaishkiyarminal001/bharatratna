@@ -29,6 +29,14 @@ export default function Home() {
 
     // Redirect the user to the WhatsApp URL
     window.location.href = whatsappUrl;
+
+
+    const qrCodeImagePath = process.env.PUBLIC_URL + "./qr.jpeg";
+    setFormData({
+        ...formData,
+        qrCodeImage: qrCodeImagePath,
+      });
+
   };
 
   return (
@@ -78,6 +86,13 @@ export default function Home() {
           </form>
         </div>
       </div>
+
+      {formData.qrCodeImage && (
+        <div className="qrCodeSection">
+          <h3>Scan the QR code to complete your booking:</h3>
+          <img src={formData.qrCodeImage} alt="QR Code" />
+        </div>
+      )}
     </div>
   );
 }
