@@ -59,9 +59,9 @@ export default function Home() {
             <label className='price'>
               Price:
               <select className='categorySelect' name="category" value={formData.category} onChange={handleChange}>
-                <option value="Platinum">Platinum</option>
-                <option value="Gold">Gold</option>
-                <option value="Loung">Loung</option>
+                <option value="Platinum">Platinum ₹250</option>
+                <option value="Gold">Gold ₹200</option>
+                <option value="Loung">Loungers ₹230</option>
               </select>
             </label>
 
