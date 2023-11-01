@@ -3,11 +3,9 @@ import "./Home.css";
 
 export default function Home() {
   const [formData, setFormData] = useState({
-    movieName: '',
-    theater: '',
-    screen: '',
-    showTiming: '',
-    price: '',
+    yourname: '', // Added 'yourname' for the user's name
+    showTiming: '12:00 P.M.',
+    category: 'Platinum', 
     numberOfTickets: 0,
   });
 
@@ -21,14 +19,13 @@ export default function Home() {
 
   const handleSubmitBook = (e) => {
     e.preventDefault();
-    // Form data logging (optional)
     console.log('Form Data:', formData);
 
     // Prepare the message based on the form data
-    const message = `%0aNumber of Tickets: ${formData.numberOfTickets}`;
+    const message = `%0aYour Name: ${formData.yourname} %0aNumber of Tickets: ${formData.numberOfTickets} %0aCategory: ${formData.category}`;
 
     // WhatsApp URL including the phone number and message
-    const whatsappUrl = `https://wa.me/<+91 74794 75733>?text=${message}`;
+    const whatsappUrl = `https://wa.me/+917479475733?text=${message}`;
 
     // Redirect the user to the WhatsApp URL
     window.location.href = whatsappUrl;
@@ -41,9 +38,7 @@ export default function Home() {
       </div>
 
       <div className="text">
-        <h3>
-          "Experience the excitement of the newest release! Book your first ticket now for the midnight premiere at 12:00 A.M. Be among the first to witness this highly anticipated movie. Secure your spot and immerse yourself in the thrill from the very beginning!"
-        </h3>
+        <h3>"Be part of the thrilling premiere! Book now for an exhilarating movie experience and secure your front-row seat!"</h3>
       </div>
 
       <div className="movieform">
@@ -52,26 +47,24 @@ export default function Home() {
         <div className='form'>
           <form>
             <label>
-              Manjhi The Bharat Ratna:
-              <input type="text" name="movieName" value={formData.movieName} onChange={handleChange} />
-            </label>
-            <label>
-              Theater:
-              <input type="text" name="theater" value={formData.theater} onChange={handleChange} />
-            </label>
-            <label>
-              Screen:
-              <input type="text" name="screen" value={formData.screen} onChange={handleChange} />
-            </label>
-            <label>
-              Show Timing:
-            <input type="text" name="showTiming" value="12:00 A.M." readOnly />
+              Your Name:
+              <input type="text" name="yourname" value={formData.yourname} onChange={handleChange} />
             </label>
 
             <label>
-              Price:
-              <input type="text" name="price" value={formData.price} onChange={handleChange} />
+              Show Timing:
+              <input type="text" name="showTiming" value={formData.showTiming} readOnly />
             </label>
+
+            <label className='price'>
+              Price:
+              <select className='categorySelect' name="category" value={formData.category} onChange={handleChange}>
+                <option value="Platinum">Platinum</option>
+                <option value="Gold">Gold</option>
+                <option value="Loung">Loung</option>
+              </select>
+            </label>
+
             <label>
               No. Of Tickets:
               <input
