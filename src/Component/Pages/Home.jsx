@@ -39,6 +39,8 @@ export default function Home() {
 
   };
 
+  // done
+
   return (
     <div className='home'>
       <div className="nav">
